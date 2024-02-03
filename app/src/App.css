@@ -36,3 +36,54 @@
     transform: rotate(360deg);
   }
 }
+
+.NftContaineur {
+  width: 100vw;
+  display: flex;
+  margin: 20px;
+  flex-wrap: wrap;
+  justify-content: center
+}
+
+.NftCard {
+  width: 450px;
+  height: 400px;
+  background-color: white;
+  border: solid 2px black;
+  margin: 20px;
+  border-radius: 10px;
+  justify-content: center;
+  position: relative;
+}
+
+.NftCardEmpty {
+  width: 450px;
+  height: 400px;
+  background-color: rgb(78, 77, 77);
+  border: solid 2px black;
+  margin: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.PetName {
+  text-align: center;
+}
+
+.PetLevel {
+  text-align: center;
+}
+
+.FeedPet {
+  position:absolute;
+  width: 40%;
+  height: 40px;
+  bottom: 0;
+  margin: 10px;
+  left: 28%;
+  background-color: red;
+  border: solid 2px black;
+  color: white;
+  font-size: x-large;
+  border-radius: 50px;
+}

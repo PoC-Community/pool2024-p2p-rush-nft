@@ -1,6 +1,6 @@
 import {formatEther} from 'viem';
-import {walletClient, publicClient} from '../create'
-import {mint} from '../getContract'
+import {walletClient, publicClient} from './utils/createWallet'
+import {mint} from './utils/getContract'
 import 'viem/window';
 
 export let Account = '';
@@ -19,9 +19,3 @@ const connect = async () => {
         Balance = formatEther(balance);
     }
 };
-function handleClick() {
-    connect();
-}
-function mint_action() {
-    mint();
-}
