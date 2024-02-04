@@ -116,7 +116,7 @@ contract PetFactory {
         _pet[_petId].level++;
     }
 
-    function setToFeed(uint256 _petId, uint256 new_value) internal {
+    function _setToFeed(uint256 _petId, uint256 new_value) internal {
         _pet[_petId].toFeed = new_value;
     }
 }
