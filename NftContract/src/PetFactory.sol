@@ -89,12 +89,10 @@ contract PetFactory {
     }
 
     function setOwner(uint256 _petId, address _newOwner) internal {
-        require(_owners[_petId] == msg.sender, "sender is not the owner");
         _owners[_petId] = _newOwner;
     }
 
     function set_Approve(uint256 _petId, address _newOwner) internal {
-        require(_owners[_petId] == msg.sender, "sender is not the owner");
         _approve[_petId] = _newOwner;
     }
 

@@ -14,8 +14,6 @@ contract PetFeedingTest is Test {
     PetFeedingHelper public petFeeding;
     address payable testAddress = payable(address(42));
 
-    // vestingPlatform.createVesting{value: 0.5 ether}(testAddress, endTimestamp);
-
     function setUp() public {
         petFeeding = new PetFeedingHelper();
     }
