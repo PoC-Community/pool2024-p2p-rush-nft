@@ -28,7 +28,7 @@ contract PetFeedingTest is Test {
     function testFeedMeSuccess() public {
         vm.startPrank(testAddress);
         petFeeding.createPet("Pet 1");
-        _myPet memory pet = petFeeding.getMyPet(0);
+        PetFactory._myPet memory pet = petFeeding.getMyPet(0);
         pet.toFeed = 2 minutes;
         setMyPet(0, pet);
         petFeeding.feedMe(0);
