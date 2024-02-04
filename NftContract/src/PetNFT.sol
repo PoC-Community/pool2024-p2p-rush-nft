@@ -89,8 +89,9 @@ contract PetNFT is IERC721, PetFeeding {
 
     function getAllNFTs() external view returns (_myPet[] memory) {
         _myPet[] memory pets = new _myPet[](5);
-        for (uint256 count = 0; count != getCount(); count++) {
-            pets[count] = getMyPet(count);
+        for (uint256 count = 0; count < 5; count++) {
+            if (count < getCount()) pets[count] = getMyPet(count);
+            else pets[count] = _myPet({toFeed: 0, name: "", level: 0});
         }
         return pets;
     }

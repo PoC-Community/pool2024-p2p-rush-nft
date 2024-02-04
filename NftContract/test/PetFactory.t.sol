@@ -36,6 +36,20 @@ contract PetFactoryTest is Test {
         assertEq(petFactory.getOwner(0), address(this));
     }
 
+    function testGetCount() public {
+        assertEq(petFactory.getCount(), 0);
+        petFactory.createPet("pet 1");
+        assertEq(petFactory.getCount(), 1);
+        petFactory.createPet("pet 2");
+        assertEq(petFactory.getCount(), 2);
+        petFactory.createPet("pet 3");
+        assertEq(petFactory.getCount(), 3);
+        petFactory.createPet("pet 4");
+        assertEq(petFactory.getCount(), 4);
+        petFactory.createPet("pet 5");
+        assertEq(petFactory.getCount(), 5);
+    }
+
     function testGetMyPetsId() public {
         uint256 petId = petFactory.createPet("Test Pet");
         uint256[] memory myPetsIds = petFactory.getMyPetsId();

@@ -30,6 +30,15 @@ contract PetFeedingTest is Test {
     //     vm.startPrank(testAddress);
     //     petFeeding.createPet("Pet 1");
     //     petFeeding.feedMe(0);
-    //     assertTrue(petFeeding.getMyPet(0).level == 2, "Level should be 2");
+    //     assertEq(petFeeding.getMyPet(0).level, 2);
     // }
+
+    function testGetPrice() public {
+        assertEq(petFeeding.getPrice(), 0.000001 ether);
+    }
+
+    function testSetPrice() public {
+        petFeeding.setPrice(0.000004 ether);
+        assertEq(petFeeding.getPrice(), 0.000004 ether);
+    }
 }
