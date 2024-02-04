@@ -18,9 +18,19 @@ contract PetFeedingTest is Test {
         petFeeding = new PetFeedingHelper();
     }
 
-    function testFeedMe() public {
+    function testFeedMeFail() public {
         vm.startPrank(testAddress);
         petFeeding.createPet("Pet 1");
+        vm.expectRevert();
+        petFeeding.feedMe(0);
+    }
+
+    function testFeedMeSuccess() public {
+        vm.startPrank(testAddress);
+        petFeeding.createPet("Pet 1");
+        _myPet memory pet = petFeeding.getMyPet(0);
+        pet.toFeed = 2 minutes;
+        setMyPet(0, pet);
         petFeeding.feedMe(0);
         assertTrue(petFeeding.getMyPet(0).level == 2, "Level should be 2");
     }

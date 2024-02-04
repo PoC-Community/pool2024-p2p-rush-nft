@@ -17,8 +17,8 @@ contract PetFeeding is PetFactory {
 
     function feedMe(uint256 _petId) external payable onlyPetOwner(_petId) {
         require(
-            getMyPet(_petId).toFeed < block.timestamp - 1 minutes,
-            "Pet can't be feed"
+            block.timestamp >= getMyPet(_petId).toFeed + 1 minutes,
+            "Pet can't be fed yet"
         );
         require(msg.sender.balance < levelFee, "Pet can't be feed");
         levelUpPet(_petId);
